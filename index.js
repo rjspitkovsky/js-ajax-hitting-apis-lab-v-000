@@ -39,16 +39,16 @@ function displayCommits() {
   const commitsList = "<ul>" + commits.map(commit => {
     `<li><h3>` + commit.commit.author.name + ' (' + commit.author.login + ')</h3>' + commit.commit.message + '</li>'.join('')
   }) + "</ul>"
-  document.getElementById("details").innerHTML = commitsList 
+  document.getElementById("details").innerHTML = commitsList
 }
 
 function getBranches(el) {
-  const repoName = el.dataset.repository 
+  const repoName = el.dataset.repository
   const url = baseURL + "/repos/" + el.dataset.username + "/" + repoName + "/branches"
-  const xml = new XMLHttpRequest() 
+  const xml = new XMLHttpRequest()
   xml.addEventListener("load", displayBranches)
   xml.open("GET", url)
-  xml.send() 
+  xml.send()
 }
 
 function displayBranches() {
