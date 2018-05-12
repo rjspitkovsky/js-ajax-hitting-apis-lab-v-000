@@ -25,3 +25,13 @@ function displayRepositories() {
   }).join("") + "</ul>"
   document.getElementById("repositores").innerHTML = repoList
 }
+
+function getCommits(el) {
+  const repoName = el.dataset.repository
+  const url = baseURL + "/repos" + el.dataset.username + "/" + repoName + "/commits"
+  const xml = new XMLHttpRequest("load", displayCommits)
+  xml.open("GET", url)
+  xml.send()
+}
+
+function d
