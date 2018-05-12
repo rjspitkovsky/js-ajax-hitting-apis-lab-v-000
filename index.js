@@ -23,7 +23,7 @@ function displayRepositories() {
         </li>`
       )
   }).join("") + "</ul>"
-  document.getElementById("repositores").innerHTML = repoList
+  document.getElementById("repositories").innerHTML = repoList
 }
 
 function getCommits(el) {
